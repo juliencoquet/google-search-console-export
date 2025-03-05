@@ -27,7 +27,7 @@ This script connects to the Google Search Console API and extracts search analyt
 1. Clone this repository or download the script file:
 
 ```bash
-git clone https://github.com/yourusername/gsc-data-retrieval.git
+git clone https://github.com/juliencoquet/gsc-data-retrieval.git
 cd gsc-data-retrieval
 ```
 
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 Or install them directly:
 
 ```bash
-pip install google-api-python-client pandas
+pip install google-api-python-client google-auth pandas
 ```
 
 ## Setup
@@ -84,7 +84,7 @@ site_url = 'https://your-website.com/'
 Run the script:
 
 ```bash
-python gsc_script.py
+python gsc-data-retrieval.py
 ```
 
 The script will:
@@ -121,7 +121,7 @@ chunk_data = fetch_search_analytics_data(
 Example cron job to run the script daily at 2 AM:
 
 ```
-0 2 * * * cd /path/to/script && /usr/bin/python3 gsc_script.py >> gsc_log.txt 2>&1
+0 2 * * * cd /path/to/script && /usr/bin/python3 gsc-data-retrieval.py >> gsc_log.txt 2>&1
 ```
 
 ### Using Task Scheduler (Windows)
@@ -131,7 +131,7 @@ Example cron job to run the script daily at 2 AM:
 3. Set the trigger (e.g., daily at 2 AM)
 4. Set the action to start a program:
    - Program/script: `python`
-   - Arguments: `C:\path\to\gsc_script.py`
+   - Arguments: `C:\path\to\gsc-data-retrieval.py.py`
    - Start in: `C:\path\to\script\directory`
 
 ## Troubleshooting
