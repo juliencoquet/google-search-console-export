@@ -79,6 +79,9 @@ service_account_file = 'service-account-key.json'
 site_url = 'https://your-website.com/'
 ```
 
+Note: if you are pointing to domain properties, you will need to use the following syntax:
+`sc-domain:yourdomain.com`
+
 ## Usage
 
 Run the script:
@@ -113,6 +116,13 @@ chunk_data = fetch_search_analytics_data(
     dimensions=['query', 'page']  # Custom dimensions
 )
 ```
+## Checking which domains/sites you have access to based on your credentials
+Run the domain/site check script:
+
+```bash
+python gsc-site-checklist.py
+```
+This will output the list of domains/sites your credentials (service account email) have access to. You can pipe the output to a text file and have the export script look through that.
 
 ## Schedule Automated Runs
 
